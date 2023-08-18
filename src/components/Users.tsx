@@ -45,7 +45,9 @@ function Users({ users } : Props) {
                                             user.location.country
                                         }
                                     </td>
-                                    <td></td>
+                                    <td>
+                                        <button>Borrar</button>
+                                    </td>
                                 </tr>
                             )
                         })
