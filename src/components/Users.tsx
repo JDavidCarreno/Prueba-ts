@@ -1,10 +1,11 @@
 import { type User } from "../types";
 
 interface Props {
-    users: User[]
+    users: User[],
+    showColors: boolean
 }
 
-function Users({ users } : Props) {
+function Users({ users, showColors } : Props) {
     return (
         <>
                         {/* table, thead, tbody 

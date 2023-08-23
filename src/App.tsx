@@ -1,6 +1,4 @@
 
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
 import { useEffect, useState } from 'react'
 import './App.css'
 import Users from './components/Users'
@@ -9,6 +7,11 @@ import { type User } from './types';
 function App() {
 
   const [ users, setUsers ] = useState<User[]>([]);
+  const [showColors, setShowcolor] = useState(false);
+
+  const toggleColors = () => {
+    setShowcolor(!showColors)
+  }
 
   useEffect(() => {
     fetch( ` https://randomuser.me/api/?results=100 ` )
@@ -23,7 +26,12 @@ function App() {
   return (
     <>
       <h1>Prueba</h1>
-      <Users users={users} />
+      <header>
+        <button onClick={toggleColors}>Colorear filas</button>
+      </header>
+      <main>
+        <Users users={users} showColors={showColors} />
+      </main>
     </>
   )
 }
